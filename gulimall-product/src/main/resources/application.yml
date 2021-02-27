@@ -4,10 +4,25 @@ spring:
     url: jdbc:mysql://192.168.56.102:3306/gulimall_pms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: root
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.56.102:8848
+    alicloud:
+      access-key: LTAI4G56gKd3TvHgFnumVVGk
+      secret-key: x25I5NYT3Ut4vzE5t0c0L2AS28qywW
+      oss:
+        endpoint: oss-cn-shenzhen.aliyuncs.com
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
     db-config:
       id-type: auto
+      logic-delete-value: 1 #逻辑已删除值(默认为1)
+      logic-not-delete-value: 0 #逻辑未删除值(默认为0)
+
 server:
   port: 11000
+logging:
+  level:
+    com.atguigu.gulimall: debug
