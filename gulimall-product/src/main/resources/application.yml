@@ -4,10 +4,6 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/gulimall_pms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: root
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
     alicloud:
       access-key: LTAI4G56gKd3TvHgFnumVVGk
       secret-key: x25I5NYT3Ut4vzE5t0c0L2AS28qywW

@@ -8,6 +8,7 @@ import java.util.Map;
 import com.atguigu.common.valid.AddGroup;
 import com.atguigu.common.valid.UpdateGroup;
 import com.atguigu.common.valid.UpdateStatusGroup;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -42,7 +43,7 @@ public class BrandController {
      * 列表
      */
     @RequestMapping("/list")
-    //@RequiresPermissions("product:brand:list")
+    @RequiresPermissions("product:brand:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = brandService.queryPage(params);
 
